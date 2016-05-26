@@ -35,7 +35,7 @@ setup(
                  "various parts of Steam's public interfaces"),
     author="Oliver Ainsworth",
     author_email="ottajay@googlemail.com",
-    packages=["valve"],
+    packages=["valve", "valve.source", "valve.steam"],
     install_requires=[
         "six>=1.6",
         "requests>=2.0",
