@@ -246,7 +246,7 @@ class RCON(object):
             that multiple attempts with the wrong password will result
             in the server automatically banning 'this' IP.
         """
-        request = self.request(Message.SERVERDATA_AUTH, unicode(password))
+        request = self.request(Message.SERVERDATA_AUTH, password)
         with self.response_to(request) as response:
             if response.id == -1:
                 raise AuthenticationError
@@ -270,7 +270,7 @@ class RCON(object):
 
         if not self.is_authenticated:
             raise AuthenticationError
-        request = self.request(Message.SERVERDATA_EXECCOMAND, unicode(command))
+        request = self.request(Message.SERVERDATA_EXECCOMAND, command)
         if block:
             with self.response_to(request):
                 pass
